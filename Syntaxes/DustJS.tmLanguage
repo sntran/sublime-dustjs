@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>dust</string>
+	</array>
+	<key>name</key>
+	<string>Dust.js Template</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>\{!</string>
+			<key>end</key>
+			<string>!\}</string>
+			<key>name</key>
+			<string>comment.block.dust</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\{[#.&lt;&gt;^/~?:]?</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.dust</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\}</string>
+			<key>name</key>
+			<string>source.dust.embedded.html</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>text.html.basic</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.dust</string>
+	<key>uuid</key>
+	<string>912d7035-17e7-453d-a125-5b00ebdcbb50</string>
+</dict>
+</plist>
