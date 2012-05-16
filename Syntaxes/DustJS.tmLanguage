@@ -6,6 +6,10 @@
 	<array>
 		<string>dust</string>
 	</array>
+	<key>foldingStartMarker</key>
+	<string>(?x)(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)\b.*?&gt;|&lt;!--(?!.*--&gt;)|\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/))))</string>
+	<key>foldingStopMarker</key>
+	<string>(?x)(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)&gt;|^\s*--&gt;|(^|\s)\})</string>
 	<key>name</key>
 	<string>Dust.js Template</string>
 	<key>patterns</key>
@@ -19,8 +23,16 @@
 			<string>comment.block.dust</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Escape tags: newline (n), carriage return (r), space (s), left brace (lb) and right brace (rb)</string>
+			<key>match</key>
+			<string>\{~([nrs]|lb|rb)\}</string>
+			<key>name</key>
+			<string>constant.language.dust</string>
+		</dict>
+		<dict>
 			<key>begin</key>
-			<string>\{[#.&lt;&gt;^/~?:]?</string>
+			<string>\{[#.&lt;&gt;^/?:]?</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
@@ -29,8 +41,10 @@
 					<string>entity.name.tag.dust</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>variable.parameter.dust</string>
 			<key>end</key>
-			<string>\}</string>
+			<string>\/?\}</string>
 			<key>name</key>
 			<string>source.dust.embedded.html</string>
 		</dict>

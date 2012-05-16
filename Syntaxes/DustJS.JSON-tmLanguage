@@ -1,20 +1,29 @@
 { "name": "Dust.js Template",
   "scopeName": "text.dust",
   "fileTypes": ["dust"],
+  "foldingStartMarker": "(?x)(<(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)\\b.*?>|<!--(?!.*-->)|\\{\\s*($|\\?>\\s*$|//|/\\*(.*\\*/\\s*$|(?!.*?\\*/))))",
+  "foldingStopMarker": "(?x)(</(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)>|^\\s*-->|(^|\\s)\\})",
   "patterns": [
     {
       "begin": "\\{!",
       "end": "!\\}",
       "name": "comment.block.dust"
     },
-  	{
-  		"begin": "\\{[#.<>^/~?:]?",
+    {
+      "match": "\\{~([nrs]|lb|rb)\\}",
+      "name":"constant.language.dust",
+      "comment": "Escape tags: newline (n), carriage return (r), space (s), left brace (lb) and right brace (rb)"
+    },
+    {
+      "begin": "\\{[#.<>^/?:]?",
       "captures": {
         "0": {"name": "entity.name.tag.dust"}
       },
-  		"end": "\\}",
-      "name": "source.dust.embedded.html"
-  	},
+      "contentName": "variable.parameter.dust",
+      "end": "\\/?\\}",
+      "name": "source.dust.embedded.html",
+      "comment": "The tag bracket and the parameter inside."
+    },
     {
       "include": "text.html.basic"
     }
