@@ -30,15 +30,22 @@
 			<key>name</key>
 			<string>constant.language.dust</string>
 		</dict>
+
+
 		<dict>
 			<key>begin</key>
-			<string>\{[#.&lt;&gt;^/?:]?</string>
+			<string>(\{[@#.&lt;&gt;^/?:]\w+)(\.\w+)?</string>
 			<key>captures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.dust</string>
+					<string>keyword.operator.index-start.php</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>meta.function.js</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -46,7 +53,27 @@
 			<key>end</key>
 			<string>\/?\}</string>
 			<key>name</key>
-			<string>source.dust.embedded.html</string>
+			<string>keyword.operator.index-end.php</string>
+		</dict>
+
+
+		<dict>
+			<key>begin</key>
+			<string>\{\w+</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.special-method</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>variable.parameter.dust</string>
+			<key>end</key>
+			<string>\/?\}</string>
+			<key>name</key>
+			<string>entity.name.tag</string>
 		</dict>
 		<dict>
 			<key>include</key>
