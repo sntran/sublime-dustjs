@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+// <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -30,8 +30,6 @@
 			<key>name</key>
 			<string>constant.language.dust</string>
 		</dict>
-
-
 		<dict>
 			<key>begin</key>
 			<string>(\{[@#.&lt;&gt;^/?:+]\w+)(\.\w+)?</string>
@@ -40,12 +38,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.operator.index-start.php</string>
+					<string>keyword.operator.dust</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>meta.function.js</string>
+					<string>entity.name.function.dust</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -53,7 +51,7 @@
 			<key>end</key>
 			<string>\/?\}</string>
 			<key>name</key>
-			<string>keyword.operator.index-end.php</string>
+			<string>keyword.operator.dust</string>
 		</dict>
 
 
@@ -65,7 +63,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.special-method</string>
+					<string>entity.name.dust</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -73,7 +71,7 @@
 			<key>end</key>
 			<string>\/?\}</string>
 			<key>name</key>
-			<string>entity.name.tag</string>
+			<string>source.dust.embedded.html</string>
 		</dict>
 		<dict>
 			<key>include</key>
