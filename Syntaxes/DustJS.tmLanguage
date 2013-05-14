@@ -54,7 +54,7 @@
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>text.dust</string>
+	<string>text.html.dust</string>
 	<key>uuid</key>
 	<string>912d7035-17e7-453d-a125-5b00ebdcbb50</string>
 </dict>
