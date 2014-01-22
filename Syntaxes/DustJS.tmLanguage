@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+// <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -32,13 +32,38 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\{[#.&lt;&gt;^/?:]?</string>
+			<string>(\{[@#.&lt;&gt;^/?:+]\w+)(\.\w+)?</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.dust</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.dust</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>variable.parameter.dust</string>
+			<key>end</key>
+			<string>\/?\}</string>
+			<key>name</key>
+			<string>keyword.operator.dust</string>
+		</dict>
+
+
+		<dict>
+			<key>begin</key>
+			<string>\{\w+</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.dust</string>
+					<string>entity.name.dust</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
